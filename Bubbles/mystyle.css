@@ -1,0 +1,17 @@
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background: rgb(222, 191, 244);
+  background: linear-gradient(
+    213deg,
+    rgba(222, 191, 244, 1) 0%,
+    rgba(255, 178, 178, 1) 50%,
+    rgba(255, 215, 158, 1) 100%
+  );
+}
+.bubbles {
+  font-size: 12rem;
+  margin: auto;
+}
