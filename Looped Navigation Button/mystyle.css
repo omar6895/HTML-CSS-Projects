@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+  overflow: auto;
+  font-family: "Roboto", sans-serif;
+}
+
+.navigation-container {
+  position: relative;
+  width: 150px;
+  height: 50px;
+  background: linear-gradient(to right, #56ccf2, #2f80ed);
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navigation-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140px;
+  height: 40px;
+  background: linear-gradient(to right, #56ccf2, #2f80ed);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.options {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  color: black;
+  z-index: 1;
+  display: none;
+}
+
+.option {
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: bold;
+}
+
+.option:hover {
+  background-color: rgb(255, 50, 50);
+  color: white;
+}
+
+.navigation-container:hover .options {
+  display: block;
+  animation: fadeIn 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navigation-button:hover {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.navigation-button.clicked {
+  width: 150px;
+  height: 100px;
+  background: linear-gradient(to right, #fd79a8, #f00075);
+  transition: all 0.3s ease;
+  border-radius: 20px;
+}
+
+.navigation-button.clicked .options {
+  display: block;
+}
+
+.navigation-button.clicked:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  z-index: 1;
+}
+
+.navigation-button.clicked .options .option {
+  display: block;
+}
